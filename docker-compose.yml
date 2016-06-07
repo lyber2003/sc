@@ -18,9 +18,9 @@ services:
           - ./tmp:/var/run/postgresql/9.5-main.pg_stat_tmp
       working_dir: /var/www/soscredit.com
   nginx:
-      image: lyber/nginx:0.1
+      image: lyber/nginx:15
       ports:
-          - 80:80
+          - 802:80
       links:
           - php
       volumes_from:
