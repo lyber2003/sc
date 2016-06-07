@@ -453,12 +453,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/temafey/vein-phalcon-core.git",
-                "reference": "473222e4f646015742c67a28ea86dd51e12f151d"
+                "reference": "6e86fb147cc2689978bce904f950b6b3aa63eea4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/temafey/vein-phalcon-core/zipball/473222e4f646015742c67a28ea86dd51e12f151d",
-                "reference": "473222e4f646015742c67a28ea86dd51e12f151d",
+                "url": "https://api.github.com/repos/temafey/vein-phalcon-core/zipball/6e86fb147cc2689978bce904f950b6b3aa63eea4",
+                "reference": "6e86fb147cc2689978bce904f950b6b3aa63eea4",
                 "shasum": ""
             },
             "type": "library",
@@ -488,7 +488,7 @@
                 "grid",
                 "phalcon"
             ],
-            "time": "2016-06-01 11:44:39"
+            "time": "2016-06-02 20:21:12"
         },
         {
             "name": "vlucas/phpdotenv",
