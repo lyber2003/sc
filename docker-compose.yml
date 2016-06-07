@@ -8,7 +8,7 @@ services:
           - .:/var/www/soscredit.com
       tty: true
   db-psql:
-      image: lyber/postgres:0.1
+      image: lyber/postgres:2
       volumes_from:
           - application
       ports:
