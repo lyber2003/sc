@@ -1,0 +1,11 @@
+vendor/*
+.idea/*
+.project
+.settings/*
+y
+y.pub
+*.log
+
+app/var/cache/jade/*.php
+app/var/logs/*.log
+loc.yml
