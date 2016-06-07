@@ -1,7 +1,7 @@
 version: '2'
 services:
   application:
-      image: lyber/application:0.1
+      image: lyber/application:2
       environment:
           - DEBUG=1
       volumes:
@@ -20,7 +20,7 @@ services:
   nginx:
       image: lyber/nginx:16
       ports:
-          - 802:80
+          - 80:80
       links:
           - php
       volumes_from:
