@@ -20,7 +20,7 @@ services:
   nginx:
       image: lyber/nginx:16
       ports:
-          - 80:80
+          - 802:80
       links:
           - php
       volumes_from:
