@@ -1,0 +1,40 @@
+include ../layouts/index.jade
+    body
+include ../partials/navbar.jade
+        .container.main-container
+            header#overview.jumbotron.subhead
+                .hero-unit
+                    h1 Welcome!
+                    p.lead This is a website secured by Phalcon Framework
+                    div(align='right')
+                        a.btn.btn-primary.btn-large(href='/user/signup')
+                            i.icon-ok.icon-white
+                            |  Получить кредит сейчас
+            .row
+                .span4
+                    .well
+                        h3 Awesome Section
+                        p
+                            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed maximus commodo ipsum ac euismod. Morbi imperdiet, leo eget hendrerit venenatis, justo quam vestibulum odio, a vulputate massa justo blandit libero.
+                        p
+                            | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed maximus commodo ipsum ac euismod. Morbi imperdiet, leo eget hendrerit venenatis, justo quam vestibulum odio, a vulputate massa justo blandit libero.
+                .span4
+                    h3 Important Stuff
+                    p
+                        | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed maximus commodo ipsum ac euismod. Morbi imperdiet, leo eget hendrerit venenatis, justo quam vestibulum odio, a vulputate massa justo blandit libero.
+                    p
+                        |Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed maximus commodo ipsum ac euismod. Morbi imperdiet, leo eget hendrerit venenatis, justo quam vestibulum odio, a vulputate massa justo blandit libero.
+                .span4
+                    h3 Example addresses
+                    address
+                        strong Soscredit, Inc.
+                        br
+                        |         Kiev, pochaininskaja 23
+                        br
+                        abbr(title='Phone') P:
+                        |  (+38044) 123 45 67
+                    address
+                        strong Full Name
+                        br
+                        a(href='mailto:#') admin@soscredit.com
+include ../partials/footer.jade

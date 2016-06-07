@@ -1,0 +1,24 @@
+include ../layouts/index.jade
+    body
+        include ../partials/navbar.jade
+        .container.main-container
+            .alert.alert-danger The e-mail is required
+            .alert.alert-danger The e-mail is not valid
+            .alert.alert-danger The password is required
+            .alert.alert-danger CSRF validation failed
+            .well(align='center')
+                form.form-search(method='post')
+                    div(align='left')
+                        h2 Log In
+                    input#email(type='text', name='email', value='', placeholder='Email')
+                    input#password(type='password', name='password', value='', placeholder='Password')
+                    input.btn.btn-success(type='submit', value='go')
+                    .remember(align='center')
+                        input#remember(type='checkbox', name='remember', value='yes')
+                        label(for='remember') Remember me
+                    input#csrf(type='hidden', name='csrf', value='joIxcnqCCZYywlql')
+                    hr
+                    .forgot
+                        a(href='/session/forgotPassword') Forgot my password
+include ../partials/footer.jade
+                                 

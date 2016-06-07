@@ -1,0 +1,40 @@
+version: '2'
+services:
+  application:
+      image: lyber/application:0.1
+      environment:
+          - DEBUG=1
+      volumes:
+          - .:/var/www/soscredit.com
+      tty: true
+  db-psql:
+      image: lyber/postgres:0.1
+      volumes_from:
+          - application
+      ports:
+          - 5433:5432
+
+      volumes:
+          - ./tmp:/var/run/postgresql/9.5-main.pg_stat_tmp
+      working_dir: /var/www/soscredit.com
+  nginx:
+      image: lyber/nginx:0.1
+      ports:
+          - 80:80
+      links:
+          - php
+      volumes_from:
+          - application
+      volumes:
+          - ./docker/nginx/log:/var/log/nginx
+          - ./docker/nginx/etc:/etc/nginx
+  redis:
+          image: redis
+  php:
+      image: lyber/php:0.1
+      working_dir: /var/www/soscredit.com
+      links:
+          - db-psql
+          - redis
+      volumes_from:
+          - application

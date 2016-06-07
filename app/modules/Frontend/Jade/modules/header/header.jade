@@ -1,0 +1,37 @@
+.header
+  .header-wrp
+    .header-controls
+      a.header-controls-logo(href='/')
+      ul.header-controls-menu
+        li.header-controls-menu-item.is-menu-for-mobile
+          a.header-controls-menu-item-link.fa.fa-navicon
+        li.header-controls-menu-item.is-search-field.is-mobile-shown
+          a.header-controls-menu-item-link.fa.fa-search(href='/search/')
+
+    .clearfix
+    .header-content
+      ul.header-content-menu
+        li.header-content-menu-item
+          a.header-content-menu-item-link(href='/test1')
+            | Test 1
+        li.header-content-menu-item
+          a.header-content-menu-item-link.is-promocodes(href='/test2')
+            | Test2
+            span.header-content-menu-item-link-badge.badge
+              i.fa.fa-refresh.fa-spin
+        li.header-content-menu-item.active-item
+          a.header-content-menu-item-link(href='/test3')
+            | Test 3
+        .clear
+  .header-white-block-for-scrolling
+    .header-scrolling-menu.is-menu-for-mobile
+      a.header-scrolling-menu-link.fa.fa-navicon
+  .clear
+  .header-content-social
+    ul.header-content-social-menu
+      li.header-content-social-menu-item
+        a.header-content-social-menu-item-link.fa.fa-facebook(href='http://www.facebook.com', target='_blank')
+      li.header-content-social-menu-item
+        a.header-content-social-menu-item-link.fa.fa-google-plus(href='https://plus.google.com/', target='_blank')
+      li.header-content-social-menu-item
+        a.header-content-social-menu-item-link.fa.fa-twitter(href='https://twitter.com/', target='_blank')

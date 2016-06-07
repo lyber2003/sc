@@ -1,0 +1,76 @@
+include ../layouts/index.jade
+    body
+        include ../partials/navbar.jade
+            .container.main-container
+                div(align='center')
+                    form.form-search(method='post')
+                        div(align='left')
+                            h2 Шаг 1 - Персональные данные.
+                        table.signup
+                            tr
+                                td(align='right')
+                                    label(for='name') *Имя
+                                td
+                                    input#name(type='text', name='name', value='')
+                                    if $name_error
+                                        each val, index in name_error
+                                            .alert.alert-danger= val
+                            tr
+                                td(align='right')
+                                    label(for='cellPhoneNumber') *Номер мобильного телефона
+                                td
+                                    input#name(type='text', name='cellPhoneNumber', value='')
+                                    if cellPhoneNumber_error
+                                        each val, index in cellPhoneNumber_error
+                                            .alert.alert-danger= val
+                            tr
+                                td(align='right')
+                                    label(for='email') *E-Mail
+                                td
+                                    input#email(type='text', name='email', value='')
+                                    if $email_error
+                                        each val, index in email_error
+                                            .alert.alert-danger= val
+                            tr
+                                td(align='right')
+                                    label(for='password') *Пароль
+                                td
+                                    input#password(type='password', name='password', value='')
+                                    if $password_error
+                                        each val, index in password_error
+                                            .alert.alert-danger= val
+                            tr
+                                td(align='right')
+                                    label(for='confirmPassword') *Подтвердить пароль
+                                td
+                                    input#confirmPassword(type='password', name='confirmPassword', value='')
+                                    if $confirmPassword_error
+                                        each val, index in confirmPassword_error
+                                            .alert.alert-danger= val
+                            tr
+                                td(align='right')
+                                td
+                                    input#terms(type='checkbox', name='terms', value='yes')
+                                    label(for='terms') *С правилами ознакомлен.
+                                    if $terms_error
+                                        each val, index in terms_error
+                                            .alert.alert-danger= val
+                            tr
+                                td(align='right')
+                                td
+                                    input#terms(type='checkbox', name='newsDelivery', value='yes')
+                                    label(for='newsDelivery') Получать новости.
+                                    if $newsDelivery_error
+                                        each val, index in newsDelivery_error
+                                            .alert.alert-danger= val
+
+                                    if $csrf_error
+                                        each val, index in csrf_error
+                                            .alert.alert-danger= val
+                            tr
+                                td(align='right')
+                                td
+                                    input.btn.btn-success(type='submit', value='Продолжить')
+                        input#csrf(type='hidden', name='csrf', value='YI5L95M4WkbChE1j')
+                        hr
+include ../partials/footer.jade

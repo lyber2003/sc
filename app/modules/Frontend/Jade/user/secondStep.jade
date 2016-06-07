@@ -1,0 +1,91 @@
+include ../layouts/index.jade
+    body
+        include ../partials/navbar.jade
+            .container.main-container
+                div(align='center')
+                    form.form-search(method='post')
+                        div(align='left')
+                            h2 Шаг 2 - Персональные данные.
+                        table.signup
+                            tr
+                                td(align='right')
+                                    label(for='name') *Имя
+                                td
+                                    input#name(type='text', name='name', value='')
+                                    if $name_error
+                                        each val, index in name_error
+                                            .alert.alert-danger= val
+                            tr
+                                td(align='right')
+                                    label(for='surname') *Фамилия
+                                td
+                                    input#name(type='text', name='surname', value='')
+                                    if surname_error
+                                        each val, index in surname_error
+                                            .alert.alert-danger= val
+                            tr
+                                td(align='right')
+                                    label(for='secondName') *Отчество
+                                td
+                                    input#name(type='text', name='secondName', value='')
+                                    if $secondName_error
+                                        each val, index in secondName_error
+                                            .alert.alert-danger= val
+                            tr
+                                td(align='right')
+                                    label(for='gender') *Пол
+                                td
+                                    input#name(type='text', name='gender', value='')
+                                    if $gender_error
+                                        each val, index in gender_error
+                                            .alert.alert-danger= val
+                            tr
+                                td(align='right')
+                                    label(for='birthday') *Дата рожденияl
+                                td
+                                    input#name(type='text', name='birthday', value='')
+                                    if $birthday_error
+                                        each val, index in birthday_error
+                                            .alert.alert-danger= val
+                            tr
+                                td(align='right')
+                                    label(for='name') *Серия и номер паспорта
+                                td
+                                    input#name(type='text', name='passportNS', value='')
+                                    if $passportNS_error
+                                        each val, index in passportNS_error
+                                            .alert.alert-danger= val
+                            tr
+                                td(align='right')
+                                    label(for='passportIssued') *Кем выдан
+                                td
+                                    input#name(type='text', name='passportIssued', value='')
+                                    if passportIssued_error
+                                        each val, index in passportIssued_error
+                                            .alert.alert-danger= val
+                            tr
+                            tr
+                                td(align='right')
+                                    label(for='passportIssuedTime') *Когда выдан
+                                td
+                                    input#name(type='text', name='passportIssuedTime', value='')
+                                    if passportIssuedTime_error
+                                        each val, index in passportIssuedTime_error
+                                            .alert.alert-danger= val
+                            tr
+                                td(align='right')
+                                    label(for='identificationNumber') *Идентификационный номер
+                                td
+                                    input#name(type='text', name='identificationNumber', value='')
+                                    if identificationNumber_error
+                                        each val, index in identificationNumber_error
+                                            .alert.alert-danger= val
+
+                                    if $csrf_error
+                                        each val, index in csrf_error
+                                            .alert.alert-danger= val
+                            tr
+                                td(align='right')
+                                td
+                                    input.btn.btn-success(type='submit', value='Продолжить')
+include ../partials/footer.jade

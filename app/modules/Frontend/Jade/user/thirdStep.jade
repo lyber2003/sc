@@ -1,0 +1,194 @@
+include ../layouts/index.jade
+    body
+        include ../partials/navbar.jade
+            .container.main-container
+                div(align='center')
+                    form.form-search(method='post')
+                        div(align='left')
+                            h2 Шаг 3 - Социальные данные.
+                        table.signup
+                            tr
+                                td(align='right')
+                                    label(for='civilStatus') *Семейное положение
+                                td
+                                    select#civilStatus(name="civilStatus")
+                                        option(value='')
+                                        option(value='1') Состою в браке
+                                        option(value='2') Не замужем/не женат
+                                        option(value='3') Разведен/а
+                                        option(value='4') В гражданском браке
+                                    if $civilStatus_error
+                                         each val, index in civilStatus_error
+                                            .alert.alert-danger= val
+                            tr
+                                td(align='right')
+                                    label(for='adressDistinct') *Фактичесский адрес, область
+                                td
+                                    select#adressDistinct(name="adressDistinct")
+                                        option(value='')
+                                        option(value='1') Киевская область
+                                        option(value='2') Львовская область
+                                        option(value='3') Житомирская область
+                                        option(value='4') ДНР
+                                    if $adressDistinct_error
+                                         each val, index in adressDistinct_error
+                                            .alert.alert-danger= val
+
+                            tr
+                                td(align='right')
+                                    label(for='postCode') *Фактичесский адрес. Индекс
+                                td
+                                    input#name(type='text', name='postCode', value='')
+                                    if $postCode_error
+                                        each val, index in postCode_error
+                                            .alert.alert-danger= val
+                            tr
+                                td(align='right')
+                                    label(for='adressСommunity') *Фактичесский адрес. Населенный пункт
+                                td
+                                    select#name(name="adressСommunity")
+                                        option(value='')
+                                        option(value='1') Город
+                                        option(value='2') Село
+                                        option(value='3') ПГТ
+                                        option(value='4') ДНР
+                                    if $adressСommunity_error
+                                        each val, index in adressСommunity_error
+                                            .alert.alert-danger= val
+                            tr
+                                td(align='right')
+                                    label(for='adressStreet') *Фактичесский адрес. Улица
+                                td
+                                    input#name(type='text', name='adressStreet', value='')
+                                    if $adressStreet_error
+                                        each val, index in adressStreet_error
+                                            .alert.alert-danger= val
+                            tr
+                                td(align='right')
+                                    label(for='adressHouse') *Фактичесский адрес. Дом
+                                td
+                                    input#name(type='text', name='adressHouse', value='')
+                                    if $adressHouse_error
+                                        each val, index in adressHouse_error
+                                            .alert.alert-danger= val
+                            tr
+                                td(align='right')
+                                    label(for='adressRoom') Фактичесский адрес. Квартира
+                                td
+                                    input#name(type='text', name='adressRoom', value='')
+                                    if adressRoom_error
+                                        each val, index in adressRoom_error
+                                            .alert.alert-danger= val
+                            tr
+                                td(align='right')
+                                    label(for='name') *Фактичесский адрес. Проживаю с даты
+                                td
+                                    select#name
+                                        option(value='')
+                                        option(value='1') Январь
+                                        option(value='2') Февраль
+                                        option(value='3') Март
+                                        option(value='4') Апрель
+                                    select#name
+                                        option(value='')
+                                        option(value='1') 2016
+                                        option(value='2') 2015
+                                        option(value='3') 2014
+                                        option(value='4') 2013
+                                    if adressDate_error
+                                        each val, index in adressDate_error
+                                            .alert.alert-danger= val
+                            tr
+                                td(align='right')
+                                td
+                                    input#terms(type='checkbox', name='isAdressOfRegistration', value='yes')
+                                    label(for='newsDelivery') Совпадает ли фактический адрес с адресом прописки.
+                                    if $isAdressOfRegistration_error
+                                        each val, index in isAdressOfRegistration_error
+                                            .alert.alert-danger= val
+                            include ../partials/forms/adressForm.jade
+                            tr
+                                td(align='right')
+                                    label(for='workPhone') Рабочий телефон
+                                td
+                                    input#name(type='text', name='workPhone', value='0938772533')
+                                    if workPhone_error
+                                        each val, index in workPhone_error
+                                            .alert.alert-danger= val
+                            tr
+                                td(align='right')
+                                    label(for='name') *Дата трудоустройства
+                                td
+                                    select#name
+                                        option(value='')
+                                        option(value='1') Январь
+                                        option(value='2') Февраль
+                                        option(value='3') Март
+                                        option(value='4') Апрель
+                                    select#name
+                                        option(value='')
+                                        option(value='1') 2016
+                                        option(value='2') 2015
+                                        option(value='3') 2014
+                                        option(value='4') 2013
+                                    if adressDate_error
+                                        each val, index in adressDate_error
+                                            .alert.alert-danger= val
+                            tr
+                                td(align='right')
+                                    label(for='name') *Дата следующей выплаты
+                                td
+                                    select#name
+                                        option(value='')
+                                        option(value='1') 01
+                                        option(value='2') 02
+                                        option(value='3') 03
+                                        option(value='4') 04
+                                    select#name
+                                        option(value='')
+                                        option(value='1') Январь
+                                        option(value='2') Февраль
+                                        option(value='3') Март
+                                        option(value='4') Апрель
+                                    select#name
+                                        option(value='')
+                                        option(value='1') 2016
+                                        option(value='2') 2015
+                                        option(value='3') 2014
+                                        option(value='4') 2013
+                                    if adressDate_error
+                                        each val, index in adressDate_error
+                                            .alert.alert-danger= val
+                            tr
+                                td(align='right')
+                                    label(for='monthCosts') *Укажите ежемесячные расходы, грн
+                                td
+                                    input#name(type='text', name='monthCosts', value='')
+                                    if monthCosts_error
+                                        each val, index in monthCosts_error
+                                            .alert.alert-danger= val
+                            tr
+                                td(align='right')
+                                    label(for='monthCostsTo') Укажите ежемесячные расходы по действующим кредитам, грн
+                                td
+                                    input#name(type='text', name='monthCostsLoans', value='')
+                                    if monthCostsLoans_error
+                                        each val, index in monthCostsLoans_error
+                                            .alert.alert-danger= val
+                            tr
+                                td(align='right')
+                                td
+                                    input#terms(type='checkbox', name='isOpenLoans', value='yes')
+                                    label(for='isOpenLoans') *У Вас погашены кредиты?
+                                    if $isOpenLoans_error
+                                        each val, index in isOpenLoans_error
+                                            .alert.alert-danger= val
+
+                                    if $csrf_error
+                                        each val, index in csrf_error
+                                            .alert.alert-danger= val
+                            tr
+                                td(align='right')
+                                td
+                                    input.btn.btn-success(type='submit', value='Продолжить')
+include ../partials/footer.jade

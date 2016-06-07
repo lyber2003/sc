@@ -1,0 +1,25 @@
+.navbar
+    .navbar-inner
+        .container(style='width: auto;')
+            a.btn.btn-navbar(data-toggle='collapse', data-target='.nav-collapse')
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+            a.brand(href='/') SosCredit
+            .nav-collapse
+                ul.nav
+                    li
+                        a(href='/index') Home
+                    li
+                        a(href='/index') About
+                ul.nav.pull-right
+                    li
+                        if $authorised
+                            li
+                                a(href='/') Личный кабинет
+                            li
+                                a(href='/user/logout') Выйти
+                        else
+                            a(href='/user/login') Войти
+            // /.nav-collapse
+    // /navbar-inner

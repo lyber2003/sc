@@ -1,0 +1,37 @@
+version: '2'
+services:
+  application:
+      build: docker/application
+      environment:
+          - DEBUG=1
+      volumes:
+          - .:/var/www/soscredit.com
+      tty: true
+  db-psql:
+      build: docker/db-psql
+      working_dir: /var/www/soscredit.com
+      volumes_from:
+          - application
+  php:
+      build: docker/php-fpm
+      working_dir: /var/www/soscredit.com
+      volumes_from:
+          - application
+      volumes_from:
+          - application
+      links:
+          - db-psql
+          - redis
+  nginx:
+      build: docker/nginx
+      ports:
+          - 802:80
+      links:
+          - php
+      volumes_from:
+          - application
+      volumes:
+          - ./docker/nginx/log:/var/log/nginx
+          - ./docker/nginx/etc:/etc/nginx
+  redis:
+          image: redis

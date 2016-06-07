@@ -1,0 +1,28 @@
+{
+  "name": "soscredit",
+  "type": "project",
+  "description": "Soscredit",
+  "require": {
+    "php": ">=5.5.9",
+    "ext-phalcon": ">=2.0.10",
+    "ext-curl": "*",
+    "ext-json": "*",
+    "psr/log": "1.0.0",
+
+    "vein/phalcon-core": "dev-master",
+    "vlucas/phpdotenv": "2.*",
+    "kylekatarnls/jade-php": "1.10.1",
+    "robmorgan/phinx": "*"
+  },
+  "require-dev": {
+    "phalcon/devtools": "2.0.10"
+  },
+  "autoload": {
+    "psr-0": {
+      "PayPal": "lib/"
+    },
+    "files": [
+      "helpers.php"
+    ]
+  }
+}

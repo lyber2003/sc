@@ -1,0 +1,39 @@
+// Left side column. contains the logo and sidebar
+aside.main-sidebar
+  // sidebar: style can be found in sidebar.less
+  section.sidebar
+    // Sidebar user panel
+    .user-panel
+      .pull-left.image
+        img.img-circle(src='/admin/dist/img/user2-160x160.jpg', alt='User Image')
+      .pull-left.info
+        p= username
+        a(href='#')
+          i.fa.fa-circle.text-success
+          |  Online
+    // search form
+    form.sidebar-form(action='#', method='get')
+      .input-group
+        input.form-control(type='text', name='q', placeholder='Search...')
+        span.input-group-btn
+          button#search-btn.btn.btn-flat(type='submit', name='search')
+            i.fa.fa-search
+    // /.search form
+    // sidebar menu: : style can be found in sidebar.less
+    ul.sidebar-menu
+      each menu, index in menus
+        li.header #{menu[title]}
+        each items, index in menu[children]
+          li.treeview
+            a(href='#')
+              i.fa.fa-table
+              span #{items[title]}
+              i.fa.fa-angle-left.pull-right
+            ul.treeview-menu
+              each item, index in items[children]
+                li
+                  a(href=item[link])
+                    i.fa.fa-circle-o
+                    | #{item[title]}
+
+  // /.sidebar
