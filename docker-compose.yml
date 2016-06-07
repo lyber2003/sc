@@ -1,7 +1,7 @@
 version: '2'
 services:
   application:
-      image: lyber/application:3
+      image: lyber/application:4
       environment:
           - DEBUG=1
       volumes:
