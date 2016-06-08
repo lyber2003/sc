@@ -31,7 +31,7 @@ services:
   redis:
           image: redis
   php:
-      image: lyber/php:10
+      image: lyber/php:11
       working_dir: /var/www/soscredit.com
       links:
           - db-psql
