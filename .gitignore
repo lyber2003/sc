@@ -5,7 +5,6 @@ vendor/*
 y
 y.pub
 *.log
-tmp
+
 app/var/cache/jade/*.php
-app/var/logs/*.log
 loc.yml
